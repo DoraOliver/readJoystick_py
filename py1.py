@@ -11,7 +11,7 @@ class PY1():
 
   def runLoop(self):
     reList = self.joystick.Joyread()
-    print(reList)
+    # print(reList)
     value = reList[0]
     type = reList[1]
     number = reList[2]
@@ -19,9 +19,9 @@ class PY1():
       if number == 0x00:
         fvalue = value / 30000
         print("X: %.3f" % (fvalue))
-      if number == 0x01:
-        fvalue = value / 30000
-        print("Y: %.3f" % (fvalue))
+      # if number == 0x01:
+      #   fvalue = value / 30000
+      #   print("Y: %.3f" % (fvalue))
     if type & 0x01:
       if number == self.joystick.BUTTON_A:
         print("Button_A: %.3f" % (value))
