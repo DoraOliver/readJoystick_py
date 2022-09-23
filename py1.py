@@ -1,12 +1,14 @@
 #！/usr/bin/env python
 import py2
-import joystick_info
+# import joystick_info
+from joystick_info import *
 
 py2.py2_function()
 
 class PY1():
   def __init__(self) -> None:
-    self.joystick = joystick_info.Joysitck()
+    # self.joystick = joystick_info.Joysitck()
+    self.joystick = Joysitck()
     
 
   def runLoop(self):
