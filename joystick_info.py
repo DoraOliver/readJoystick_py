@@ -23,21 +23,23 @@ class Joysitck():
     evbuf = self.jsdev.read(8)
     if evbuf:
       time, value, type, number = struct.unpack('IhBB', evbuf)
-      print(str(struct.unpack('IhBB', evbuf)))
-      if type & 0x02:
-        if number == 0x00:
-          fvalue = value / 30000
-          print("X: %.3f" % (fvalue))
-        if number == 0x01:
-          fvalue = value / 30000
-          print("Y: %.3f" % (fvalue))
-      if type & 0x01:
-        if number == self.BUTTON_A:
-          print("Button_A: %.3f" % (value))
-        elif number == self.BUTTON_B:
-          print("Button_B: %.3f" % (value))
-        elif number == self.BUTTON_X:
-          print("Button_X: %.3f" % (value))
-        elif number == self.BUTTON_Y:
-          print("Button_Y: %.3f" % (value))
+      # print(str(struct.unpack('IhBB', evbuf)))
+      # if type & 0x02:
+      #   if number == 0x00:
+      #     fvalue = value / 30000
+      #     print("X: %.3f" % (fvalue))
+      #   if number == 0x01:
+      #     fvalue = value / 30000
+      #     print("Y: %.3f" % (fvalue))
+      # if type & 0x01:
+      #   if number == self.BUTTON_A:
+      #     print("Button_A: %.3f" % (value))
+      #   elif number == self.BUTTON_B:
+      #     print("Button_B: %.3f" % (value))
+      #   elif number == self.BUTTON_X:
+      #     print("Button_X: %.3f" % (value))
+      #   elif number == self.BUTTON_Y:
+      #     print("Button_Y: %.3f" % (value))
+
+    return [value, type, number]
 
